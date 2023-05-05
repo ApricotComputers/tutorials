@@ -16,6 +16,7 @@ spec:
       labels:
         app.kubernetes.io/name: querier
     spec:
+      serviceAccount: thanos
       securityContext:
         runAsUser: 1001
         fsGroup: 1001

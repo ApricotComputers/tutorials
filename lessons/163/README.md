@@ -16,6 +16,8 @@ kubectl pods
 kubectl port-forward svc/prometheus-operated 9090 -n monitoring
 open http://localhost:9090/
 
+query prometheus_http
+
 ## deploy minio
 
 kubectl apply -f minio-ns.yaml
@@ -41,16 +43,28 @@ kubectl logs -f prometheus-main-0 -c thanos-sidecar -f
 
 ## Deploy Thanos
 
+create querier
+
 kubectl apply -f thanos
 
 
+kubectl logs -l app.kubernetes.io/name=querier -n monitoring -f
+kubectl port-forward svc/querier 9090 -n monitoring
 
+open `Stores`
 
+query `prometheus_http_requests_total` and show `prometheus="monitoring/main"`
 
+create storagegateway
 
+kubectl apply -f thanos
+kubectl logs -l app.kubernetes.io/name=storegateway -n monitoring -f
 
+add storagegateway to querier
 
+```
 
+```
 
 
 

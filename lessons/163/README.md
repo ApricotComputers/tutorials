@@ -19,7 +19,7 @@ open http://localhost:9090/
 ## deploy minio
 
 kubectl apply -f minio-ns.yaml
-
+kubectl apply -f minio
 
 
 

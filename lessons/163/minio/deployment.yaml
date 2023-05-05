@@ -35,8 +35,8 @@ spec:
             - name: minio-user
               mountPath: "/tmp/credentials"
               readOnly: true
-            # - name: export
-            #   mountPath: /export
+            - name: export
+              mountPath: /export
           ports:
             - name: http
               containerPort: 9000
@@ -80,9 +80,9 @@ spec:
                 - minio
                 - mongodb
       volumes:
-        # - name: export
-        #   persistentVolumeClaim:
-        #     claimName: minio
+        - name: export
+          persistentVolumeClaim:
+            claimName: minio
         - name: minio-user
           secret:
             secretName: minio

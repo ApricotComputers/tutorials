@@ -41,7 +41,7 @@ kubectl logs -f prometheus-main-0 -c thanos-sidecar -f
 
 ## Deploy Thanos
 
-
+kubectl apply -f thanos
 
 
 

@@ -70,6 +70,7 @@ kubectl apply -f thanos
 
 open `Store` in querier
 
+kubectl apply -f thanos
 
 ## remote write
 

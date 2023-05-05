@@ -20,6 +20,18 @@ open http://localhost:9090/
 
 kubectl apply -f minio-ns.yaml
 kubectl apply -f minio
+kubectl get pods -n minio
+
+kubectl get svc -n minio
+kubectl port-forward svc/minio-console 9001 -n minio
+
+admin/devops123
+
+create
+
+## setup prometheus sidecar
+
+
 
 
 

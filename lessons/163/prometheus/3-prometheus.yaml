@@ -41,3 +41,8 @@ spec:
   #       resources:
   #         requests:
   #           storage: 20Gi
+  thanos:
+    version: v0.31.0
+    objectStorageConfig:
+      name: objstore
+      key: objstore.yml

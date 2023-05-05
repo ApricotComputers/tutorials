@@ -23,14 +23,30 @@ kubectl apply -f minio
 kubectl get pods -n minio
 
 kubectl get svc -n minio
-kubectl port-forward svc/minio-console 9001 -n minio
 
-admin/devops123
+
+
+<!-- minikube addons enable ingress -->
+
+<!-- kubectl port-forward svc/minio-console 9001 -n minio -->
+
+
+
+
 
 create
 
 ## setup prometheus sidecar
+minikube service minio-console --url -n minio
+admin/devops123
 
+create `prometheus-metrics`
+create access key
+
+aDyTcU5HOUVNTfl8
+m2Rv69ko3f5qnjiD83sAih4BWMRZWL9T
+
+kubectl logs -f prometheus-main-0 -c thanos-sidecar -f
 
 
 

@@ -9,7 +9,8 @@ stringData:
     type: S3
     config:
       bucket: prometheus-metrics
-      endpoint: ""
+      endpoint: "minio.minio:9000"
+      # path_style: true
       insecure: true
-      access_key: ""
-      secret_key: ""
+      access_key: "aDyTcU5HOUVNTfl8"
+      secret_key: "m2Rv69ko3f5qnjiD83sAih4BWMRZWL9T"

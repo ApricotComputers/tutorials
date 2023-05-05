@@ -63,9 +63,12 @@ kubectl logs -l app.kubernetes.io/name=storegateway -n monitoring -f
 add storagegateway to querier
 
 ```
-
+- --store=storegateway.monitoring:10901
 ```
 
+kubectl apply -f thanos
+
+open `Store` in querier
 
 
 ## remote write

@@ -46,3 +46,16 @@ spec:
     objectStorageConfig:
       name: objstore
       key: objstore.yml
+    grpcServerTlsConfig:
+      caFile: /secrets/ca.crt
+      certFile: /secrets/tls.crt
+      keyFile: /secrets/tls.key
+  containers:
+    - name: thanos-sidecar
+      volumeMounts:
+        - name: sidecar-tls
+          mountPath: /secrets
+  volumes:
+    - name: sidecar-tls
+      secret:
+        secretName: sidecar-tls

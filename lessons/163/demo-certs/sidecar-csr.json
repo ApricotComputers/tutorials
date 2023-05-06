@@ -1,0 +1,18 @@
+{
+    "CN": "prometheus-operated.monitoring",
+    "hosts": [
+        "prometheus-operated.monitoring",
+        "sidecar.antonputra.com"
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "US",
+            "ST": "CA",
+            "L": "Los Banos"
+        }
+    ]
+}

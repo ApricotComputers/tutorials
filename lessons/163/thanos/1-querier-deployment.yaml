@@ -32,6 +32,10 @@ spec:
             - --query.replica-label=prometheus_replica
             - --store=prometheus-operated.monitoring:10901
             - --store=storegateway.monitoring:10901
+            - --grpc-client-tls-secure
+            - --grpc-client-tls-cert=/secrets/tls.crt
+            - --grpc-client-tls-key=/secrets/tls.key
+            - --grpc-client-tls-ca=/secrets/ca.crt
           ports:
             - name: http
               containerPort: 10902
@@ -64,3 +68,10 @@ spec:
             limits:
               cpu: 500m
               memory: 2Gi
+          volumeMounts:
+            - name: querier-tls
+              mountPath: /secrets
+      volumes:
+        - name: querier-tls
+          secret:
+            secretName: querier-tls

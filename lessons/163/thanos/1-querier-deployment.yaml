@@ -30,8 +30,8 @@ spec:
             - --grpc-address=0.0.0.0:10901
             - --http-address=0.0.0.0:10902
             - --query.replica-label=prometheus_replica
-            - --store=prometheus-operated.monitoring:10901
-            - --store=storegateway.monitoring:10901
+            - --store=sidecar.monitoring.svc.cluster.local:10901
+            - --store=storegateway.monitoring.svc.cluster.local:10901
             - --grpc-client-tls-secure
             - --grpc-client-tls-cert=/secrets/tls.crt
             - --grpc-client-tls-key=/secrets/tls.key

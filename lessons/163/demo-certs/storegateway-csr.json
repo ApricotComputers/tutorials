@@ -1,8 +1,8 @@
 {
-    "CN": "storagegateway.monitoring.svc.cluster.local",
+    "CN": "storegateway.monitoring.svc.cluster.local",
     "hosts": [
-        "storagegateway.monitoring.svc.cluster.local",
-        "storagegateway.antonputra.com"
+        "storegateway.monitoring.svc.cluster.local",
+        "storegateway.antonputra.com"
     ],
     "key": {
         "algo": "rsa",

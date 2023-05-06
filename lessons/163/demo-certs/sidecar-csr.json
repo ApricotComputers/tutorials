@@ -1,7 +1,7 @@
 {
-    "CN": "prometheus-operated.monitoring",
+    "CN": "sidecar.monitoring.svc.cluster.local",
     "hosts": [
-        "prometheus-operated.monitoring",
+        "sidecar.monitoring.svc.cluster.local",
         "sidecar.antonputra.com"
     ],
     "key": {

@@ -88,15 +88,15 @@ spec:
               subPath: objstore.yml
             - name: data
               mountPath: /data
-            - name: storage-tls
+            - name: storegateway-tls
               mountPath: /secrets
       volumes:
         - name: objstore
           secret:
             secretName: objstore
-        - name: storage-tls
+        - name: storegateway-tls
           secret:
-            secretName: storage-tls
+            secretName: storegateway-tls
   volumeClaimTemplates:
     - metadata:
         name: data

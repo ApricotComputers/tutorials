@@ -125,6 +125,8 @@ spec:
 
 ```
 
+create `7-sidecar-svc.yaml`
+
 ## Remote read mTLS
 
 https://kubernetes.io/docs/tasks/tls/managing-tls-in-a-cluster/
@@ -209,12 +211,12 @@ update storagegateway
             - --grpc-server-tls-client-ca=/secrets/ca.crt
 
 
-            - name: storage-tls
+            - name: storegateway-tls
               mountPath: /secrets
 
-        - name: storage-tls
+        - name: storegateway-tls
           secret:
-            secretName: storage-tls
+            secretName: storegateway-tls
 ```
 
 kubectl apply -f thanos

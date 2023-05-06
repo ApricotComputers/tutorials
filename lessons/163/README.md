@@ -1,5 +1,50 @@
 # Thanos
 
+
+## remote read
+
+minikube start --kubernetes-version=v1.26.3 --driver=docker
+
+go over namespaces a then folders including all prometehus resources (selectors, etc.) and minio
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## remote read
 
 minikube start --kubernetes-version=v1.26.3 --driver=docker

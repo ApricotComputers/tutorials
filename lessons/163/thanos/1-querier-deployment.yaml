@@ -31,11 +31,15 @@ spec:
             - --http-address=0.0.0.0:10902
             - --query.replica-label=prometheus_replica
             - --store=sidecar.monitoring.svc.cluster.local:10901
+            # START: Only after you deploy storegateway
             - --store=storegateway.monitoring.svc.cluster.local:10901
+            # END: Only after you deploy storegateway
+            # START: Mutual TLS
             - --grpc-client-tls-secure
             - --grpc-client-tls-cert=/secrets/tls.crt
             - --grpc-client-tls-key=/secrets/tls.key
             - --grpc-client-tls-ca=/secrets/ca.crt
+            # END: Mutual TLS
           ports:
             - name: http
               containerPort: 10902
@@ -68,6 +72,7 @@ spec:
             limits:
               cpu: 500m
               memory: 2Gi
+          # START: Mutual TLS
           volumeMounts:
             - name: querier-tls
               mountPath: /secrets
@@ -75,3 +80,4 @@ spec:
         - name: querier-tls
           secret:
             secretName: querier-tls
+      # END: Mutual TLS

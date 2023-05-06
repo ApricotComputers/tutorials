@@ -203,8 +203,21 @@ update storagegateway
 
 
 
+```
+            - --grpc-server-tls-cert=/secrets/tls.crt
+            - --grpc-server-tls-key=/secrets/tls.key
+            - --grpc-server-tls-client-ca=/secrets/ca.crt
 
 
+            - name: storage-tls
+              mountPath: /secrets
+
+        - name: storage-tls
+          secret:
+            secretName: storage-tls
+```
+
+kubectl apply -f thanos
 
 
 

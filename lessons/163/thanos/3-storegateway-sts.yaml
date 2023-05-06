@@ -47,6 +47,9 @@ spec:
             - --http-address=0.0.0.0:10902
             - --data-dir=/data
             - --objstore.config-file=/conf/objstore.yml
+            - --grpc-server-tls-cert=/secrets/tls.crt
+            - --grpc-server-tls-key=/secrets/tls.key
+            - --grpc-server-tls-client-ca=/secrets/ca.crt
           ports:
             - name: http
               containerPort: 10902
@@ -85,10 +88,15 @@ spec:
               subPath: objstore.yml
             - name: data
               mountPath: /data
+            - name: storage-tls
+              mountPath: /secrets
       volumes:
         - name: objstore
           secret:
             secretName: objstore
+        - name: storage-tls
+          secret:
+            secretName: storage-tls
   volumeClaimTemplates:
     - metadata:
         name: data

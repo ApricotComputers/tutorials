@@ -1,0 +1,18 @@
+{
+    "CN": "storagegateway.monitoring.svc.cluster.local",
+    "hosts": [
+        "storagegateway.monitoring.svc.cluster.local",
+        "storagegateway.antonputra.com"
+    ],
+    "key": {
+        "algo": "rsa",
+        "size": 2048
+    },
+    "names": [
+        {
+            "C": "US",
+            "ST": "CA",
+            "L": "Los Banos"
+        }
+    ]
+}
